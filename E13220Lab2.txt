@@ -1,0 +1,23 @@
+create database E13220Lab02;
+
+use E13220Lab02;
+
+create table CustomerOrderDetails (OrderNumber int(6) PRIMARY KEY, Size varchar(8), Color varchar(8), Cap boolean, wristBand boolean, firstName varchar(25), lastName varchar(25), Address1 varchar(20), Address2 varchar(30), Address3 varchar(30), Comments varchar(100)); 
+
+describe CustomerOrderDetails;
+
+insert into CustomerOrderDetails (OrderNumber, Size, Color, Cap, wristBand, firstName, lastName, Address1, Address2, Address3, Comments) values (1, 'Small', 'Blue', 1, 1, 'Nilanka', 'Abeynayake', '1/365', 'batuwanhena', 'Elpitiya', 'Isn't the price too much?');
+
+insert into CustomerOrderDetails (OrderNumber, Size, Color, Cap, wristBand, firstName, lastName, Address1, Address2, Address3, Comments) values (2, 'Large', 'Red', 1, 0, 'Amila', 'Amarasinghe', 'No.3', 'Kiriwaththuduwa', 'Homagama', 'Can we have more sizes..');
+
+insert into CustomerOrderDetails (OrderNumber, Size, Color, Cap, wristBand, firstName, lastName, Address1, Address2, Address3, Comments) values (3, 'Medium', 'Purple', 0, 1, 'Kelum', 'Sankalpa', 'No.23', 'Beligala', 'Kegalle', 'Good job');
+
+insert into CustomerOrderDetails (OrderNumber, Size, Color, Cap, wristBand, firstName, lastName, Address1, Address2, Address3, Comments) values (4, 'Small', 'Green', 0, 0, 'Imal', 'Kumarasiri', 'D20/A', 'Mahawaththa', 'Welipanna', 'This limits our selections..');
+
+select * from CustomerOrderDetails;
+
+update CustomerOrderDetails set Size='Medium', Color='Red' where Size='Small' and Color='Green';
+
+delete from CustomerOrderDetails where firstName='Imal';
+
+select * from CustomerOrderDetails;
